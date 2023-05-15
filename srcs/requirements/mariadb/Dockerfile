@@ -14,7 +14,7 @@ COPY	conf/50-server.cnf /etc/mysql/50-server.cnf
 #RUN		mysql_install_db --user=mysql --datadir=/var/lib/mysql --auth-root-authentication-method=normal --skip-test-db
 EXPOSE	3306
 
-COPY	script_db.sh /etc/script_db.sh
+COPY	tools/script_db.sh /etc/script_db.sh
 RUN		chmod +x /etc/script_db.sh
 
 ENTRYPOINT [ "bash" , "./etc/script_db.sh"]

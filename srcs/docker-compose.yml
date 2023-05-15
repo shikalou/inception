@@ -1,4 +1,4 @@
-version: "3.9"
+version: "3"
 
 services:
 
@@ -53,14 +53,14 @@ volumes:
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: '/mnt/nfs/homes/ldinaut/data/wordpress'
+      device: '/home/ldinaut/data/wordpress'
   
   mariadb:
     driver: local
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: '/mnt/nfs/homes/ldinaut/data/mariadb'
+      device: '/home/ldinaut/data/mariadb'
 
 networks:
   rezoption:

@@ -18,7 +18,7 @@ wp core install	--allow-root \
 wp user create		--allow-root \
 			${USER1_LOGIN} ${USER1_MAIL} \
 			--role=author \
-			--user_pass=${USER1_PASS} ;
+			--user_pass=${USER1_PASSWORD} ;
 
 wp cache flush --allow-root
 

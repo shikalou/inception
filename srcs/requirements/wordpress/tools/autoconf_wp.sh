@@ -21,20 +21,6 @@ wp user create		--allow-root \
 			--user_pass=${USER1_PASSWORD} ;
 
 wp cache flush --allow-root
-
-# it provides an easy-to-use interface for creating custom contact forms and managing submissions, as well as supporting various anti-spam techniques
-wp plugin install contact-form-7 --activate
-
-# set the site language to English
-wp language core install en_US --activate
-
-# remove default themes and plugins
-wp theme delete twentynineteen twentytwenty
-wp plugin delete hello
-
-# set the permalink structure
-wp rewrite structure '/%postname%/'
-
 fi
 
 if [ ! -d /run/php ]; then

@@ -1,5 +1,5 @@
 up: build
-	sudo docker compose -f ./srcs/docker-compose.yml up
+	sudo docker compose -f ./srcs/docker-compose.yml up -d
 
 build: 
 	sudo mkdir -p /home/ldinaut/data/wordpress

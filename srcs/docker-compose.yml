@@ -3,9 +3,10 @@ version: "3"
 services:
 
   mariadb:
+    image: mariadb
     container_name: mariadb
     networks:
-      - rezoption
+      - inception
     build:
       context: requirements/mariadb
       dockerfile: Dockerfile
@@ -17,9 +18,10 @@ services:
       - "3306"
 
   nginx:
+    image: nginx
     container_name: nginx
     networks:
-      - rezoption
+      - inception
     volumes:
       - wordpress:/var/www/wordpress
     depends_on:
@@ -29,16 +31,17 @@ services:
       dockerfile: Dockerfile
     env_file: .env
     ports:
-      - "8080"
+      - "443:443"
     restart: on-failure 
 
   wordpress:
+    image: wordpress
     container_name: wordpress
     env_file: .env
     volumes:
       - wordpress:/var/www/wordpress
     networks:
-      - rezoption
+      - inception
     build:
       context: requirements/wordpress
       dockerfile: Dockerfile
@@ -63,5 +66,5 @@ volumes:
       device: '/home/ldinaut/data/mariadb'
 
 networks:
-  rezoption:
+  inception:
     driver: bridge

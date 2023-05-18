@@ -27,4 +27,4 @@ COPY	tools/autoconf_wp.sh ./
 RUN		chmod +x autoconf_wp.sh
 
 #ENTRYPOINT [ "bash" ]
-ENTRYPOINT [ "bash", "./autoconf_wp.sh" ]
+ENTRYPOINT [ "./autoconf_wp.sh" ]
